@@ -32,14 +32,14 @@ const ComponentCard = ({
   },
 }) => {
   const classes = useStyles();
-  console.log(code);
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={`https://flagcdn.com/w1280/${code?.toLowerCase()}.png`}
+        <img
+          className='img__flag'
+          src={`https://flagcdn.com/w1280/${code?.toLowerCase()}.png`}
           title='Country image'
+          width='300'
         />
         <CardContent>
           <div className='country__data'>
@@ -63,14 +63,12 @@ const ComponentCard = ({
               <span className='span__font'>{continent?.name}</span>
             </Typography>
             <Typography>
-              <span>
-                🌍 Languages :
-                {languages?.map((item) => (
-                  <h5 style={{ marginLeft: '50px' }}>
-                    <span className='span__font'>{item.name}</span>
-                  </h5>
-                ))}
-              </span>
+              🌍 Languages :
+              {languages?.map((item, i) => (
+                <div key={i} style={{ marginLeft: '50px' }}>
+                  <span className='span__font'>{item.name}</span>
+                </div>
+              ))}
             </Typography>
           </div>
         </CardContent>

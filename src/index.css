@@ -164,8 +164,11 @@ a {
   font-weight: 400;
 }
 
-.span__font{
+.span__font {
   font-size: 1.2rem;
   font-weight: 400;
   margin-bottom: 10px;
+}
+.img__flag {
+  padding: 15px;
 }

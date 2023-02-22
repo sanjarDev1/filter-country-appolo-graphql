@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import { useMainContext } from '../../context/Main';
 
 const SearchInput = ({ onSearch }) => {
   const [input, setInput] = useState('');
+  const [state, dispatch] = useMainContext();
 
   const submitHandler = (e) => {
     e.preventDefault();
-
-    onSearch(input);
+    dispatch({
+      type: 'setValue',
+      payload: input,
+    });
   };
 
   return (
