@@ -1,9 +1,12 @@
-import React from 'react'
-
+import React from 'react';
+import { useQuery } from '@apollo/client/react';
+import { GET_COUNTRY } from './graphql/queryCountries/queryCountries';
 const App = () => {
-  return (
-    <div>Hello World</div>
-  )
-}
+  const { loading, error, data } = useQuery(GET_COUNTRY, {
+    variables: { code: 'UZ' },
+  });
+  console.log(data);
+  return <div>Hello World</div>;
+};
 
-export default App
+export default App;
