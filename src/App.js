@@ -1,9 +1,12 @@
 import React from 'react';
+import MainContextProviderfrom from './context';
 import Asosiy from './pages/Asosiy';
 const App = () => {
   return (
     <div className='container'>
-      <Asosiy />
+      <MainContextProviderfrom>
+        <Asosiy />
+      </MainContextProviderfrom>
     </div>
   );
 };
